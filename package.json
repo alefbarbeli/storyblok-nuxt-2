@@ -1,6 +1,6 @@
 {
   "name": "@storyblok/nuxt-2",
-  "version": "0.0.2",
+  "version": "1.1.0",
   "description": "Storyblok Nuxt.js module",
   "exports": {
     ".": {
@@ -9,21 +9,21 @@
     },
     "./module": "./module/index.js"
   },
-  "main": "dist/storyblok-nuxt.js",
-  "module": "dist/storyblok-nuxt.mjs",
+  "main": "./dist/storyblok-nuxt.js",
+  "module": "./dist/storyblok-nuxt.mjs",
   "files": [
     "dist",
     "module"
   ],
   "scripts": {
-    "build": "node_modules/.bin/vite build",
-    "cy:open": "node_modules/.bin/cypress open",
-    "cy:run": "node_modules/.bin/cypress run",
+    "build": "vite build",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "playground:run": "cd ../playground && npm run start",
     "pretest:e2e": "cd ../playground && npm run build",
-    "test:e2e": "node_modules/.bin/start-server-and-test playground:run http://localhost:3000 cy:run",
-    "test:e2e-watch": "node_modules/.bin/start-server-and-test playground:run http://localhost:3000 cy:open",
-    "prepublishOnly": "cp ../README.md lib"
+    "test:e2e": "start-server-and-test playground:run http://localhost:3000 cy:run",
+    "test:e2e-watch": "start-server-and-test playground:run http://localhost:3000 cy:open",
+    "prepublishOnly": "cp ../README.md ./"
   },
   "dependencies": {
     "@storyblok/vue-2": "^1.2.0"
